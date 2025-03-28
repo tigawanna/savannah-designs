@@ -1,11 +1,116 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Tenor+Sans&display=swap')
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Tenor+Sans&display=swap")
 layer(base);
 
-@import 'tailwindcss';
+
+
+@import "tailwindcss";
 
 @plugin 'tailwindcss-animate';
 
-@custom-variant dark (&:is(.dark *));
+@plugin "daisyui" {
+  themes: cupcake --default, forest --prefersdark;
+  /* themes: all; */
+  logs: false;
+};
+
+
+ @import "../styles/daisyui.css";
+
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+};
+
+:root {
+  --background-base: var(--color-base-100);
+  --foreground-base: var(--color-base-content);
+  --card-base: var(--color-base-100);
+  --card-foreground-base: var(--color-base-content);
+  --popover-base: var(--color-base-100);
+  --popover-foreground-base: var(--color-base-content);
+  --primary-base: var(--color-primary);
+  --primary-foreground-base: var(--color-primary-content);
+  --secondary-base: var(--color-secondary);
+  --secondary-foreground-base: var(--color-secondary-content);
+  --muted-base: var(--color-neutral);
+  --muted-foreground-base: var(--color-neutral-content);
+  --accent-base: var(--color-accent);
+  --accent-foreground-base: var(--color-accent-content);
+  --destructive-base: var(--color-error);
+  --destructive-foreground-base: var(--color-error-content);
+  --border: var(--color-base-content);
+  --input: var(--color-base-100);
+  --ring: var(--color-primary);
+   --radius: var(--radius-box);
+  --chart-1: var(--color-accent);
+  --chart-2: var(--color-info);
+  --chart-3: var(--color-succent);
+  --chart-4: var(--color-warning);
+  --chart-5: var(--color-error);
+  --sidebar-background: var(--color-base-100);
+  --sidebar-foreground: var(--color-base-content);
+  --sidebar-primary: var(--color-primary);
+  --sidebar-primary-foreground: var(--color-primary-content);
+  --sidebar-accent: var(--color-accent);
+  --sidebar-accent-foreground: var(--color-accent-content);
+  --sidebar-border: var(--color-base-content);
+  --sidebar-ring: var(--color-neutral);
+}
+
+.dark {
+  @theme {
+    --color-savanna-50: #fcf9f0;
+    --color-savanna-100: #f8f1d8;
+    --color-savanna-200: #f1e2b1;
+    --color-savanna-300: #e9ce82;
+    --color-savanna-400: #e0ba5b;
+    --color-savanna-500: #d49f34;
+    --color-savanna-600: #c1832a;
+    --color-savanna-700: #9f6525;
+    --color-savanna-800: #835126;
+    --color-savanna-900: #6c4325;
+    --color-savanna-950: #3c2413;
+
+    --color-forest-50: #f1f8f4;
+    --color-forest-100: #dcefe3;
+    --color-forest-200: #bde0c9;
+    --color-forest-300: #92c9a9;
+    --color-forest-400: #63ad85;
+    --color-forest-500: #429169;
+    --color-forest-600: #2f7553;
+    --color-forest-700: #265e44;
+    --color-forest-800: #224b39;
+    --color-forest-900: #1d3d30;
+    --color-forest-950: #0f2a20;
+
+    --color-earth-50: #f9f6f3;
+    --color-earth-100: #f1ebe5;
+    --color-earth-200: #e2d5cc;
+    --color-earth-300: #d0b8a8;
+    --color-earth-400: #ba967f;
+    --color-earth-500: #aa7e63;
+    --color-earth-600: #9b6d55;
+    --color-earth-700: #815748;
+    --color-earth-800: #6c4a3f;
+    --color-earth-900: #5a3e35;
+    --color-earth-950: #302019;
+  }
+}
 
 @theme {
   --font-sans: Inter, sans-serif;
@@ -39,41 +144,41 @@ layer(base);
   --color-card: hsl(var(--card));
   --color-card-foreground: hsl(var(--card-foreground));
 
-  --color-savanna-50: #fcf9f0;
-  --color-savanna-100: #f8f1d8;
-  --color-savanna-200: #f1e2b1;
-  --color-savanna-300: #e9ce82;
-  --color-savanna-400: #e0ba5b;
+  --color-savanna-50: #3c2413;
+  --color-savanna-100: #6c4325;
+  --color-savanna-200: #835126;
+  --color-savanna-300: #9f6525;
+  --color-savanna-400: #c1832a;
   --color-savanna-500: #d49f34;
-  --color-savanna-600: #c1832a;
-  --color-savanna-700: #9f6525;
-  --color-savanna-800: #835126;
-  --color-savanna-900: #6c4325;
-  --color-savanna-950: #3c2413;
+  --color-savanna-600: #e0ba5b;
+  --color-savanna-700: #e9ce82;
+  --color-savanna-800: #f1e2b1;
+  --color-savanna-900: #f8f1d8;
+  --color-savanna-950: #fcf9f0;
 
-  --color-forest-50: #f1f8f4;
-  --color-forest-100: #dcefe3;
-  --color-forest-200: #bde0c9;
-  --color-forest-300: #92c9a9;
-  --color-forest-400: #63ad85;
+  --color-forest-50: #0f2a20;
+  --color-forest-100: #1d3d30;
+  --color-forest-200: #224b39;
+  --color-forest-300: #265e44;
+  --color-forest-400: #2f7553;
   --color-forest-500: #429169;
-  --color-forest-600: #2f7553;
-  --color-forest-700: #265e44;
-  --color-forest-800: #224b39;
-  --color-forest-900: #1d3d30;
-  --color-forest-950: #0f2a20;
+  --color-forest-600: #63ad85;
+  --color-forest-700: #92c9a9;
+  --color-forest-800: #bde0c9;
+  --color-forest-900: #dcefe3;
+  --color-forest-950: #f1f8f4;
 
-  --color-earth-50: #f9f6f3;
-  --color-earth-100: #f1ebe5;
-  --color-earth-200: #e2d5cc;
-  --color-earth-300: #d0b8a8;
-  --color-earth-400: #ba967f;
+  --color-earth-50: #302019;
+  --color-earth-100: #5a3e35;
+  --color-earth-200: #6c4a3f;
+  --color-earth-300: #815748;
+  --color-earth-400: #9b6d55;
   --color-earth-500: #aa7e63;
-  --color-earth-600: #9b6d55;
-  --color-earth-700: #815748;
-  --color-earth-800: #6c4a3f;
-  --color-earth-900: #5a3e35;
-  --color-earth-950: #302019;
+  --color-earth-600: #ba967f;
+  --color-earth-700: #d0b8a8;
+  --color-earth-800: #e2d5cc;
+  --color-earth-900: #f1ebe5;
+  --color-earth-950: #f9f6f3;
 
   --radius-lg: var(--radius);
   --radius-md: calc(var(--radius) - 2px);
@@ -89,11 +194,7 @@ layer(base);
   --animate-float: float 6s ease-in-out infinite;
   --animate-shimmer: shimmer 2s linear infinite;
 
-  --background-image-savanna-gradient: linear-gradient(
-    to right,
-    #e6b980 0%,
-    #eacda3 100%
-  );
+  --background-image-savanna-gradient: linear-gradient(to right, #e6b980 0%, #eacda3 100%);
   --background-image-forest-gradient: linear-gradient(
     to right,
     #c1c161 0%,
@@ -187,7 +288,7 @@ layer(base);
       background-position: 1000px 0;
     }
   }
-}
+};
 
 @utility container {
   margin-inline: auto;
@@ -200,23 +301,7 @@ layer(base);
   }
 }
 
-/*
-  The default border color has changed to `currentColor` in Tailwind CSS v4,
-  so we've added these compatibility styles to make sure everything still
-  looks the same as it did with Tailwind CSS v3.
 
-  If we ever want to remove these styles, we need to add an explicit border
-  color utility to any element that depends on these defaults.
-*/
-@layer base {
-  *,
-  ::after,
-  ::before,
-  ::backdrop,
-  ::file-selector-button {
-    border-color: var(--color-gray-200, currentColor);
-  }
-}
 
 @utility glass {
   @apply bg-white/60 backdrop-blur-lg border border-white/20 shadow-soft;
@@ -277,4 +362,3 @@ layer(base);
 @utility section-subtitle {
   @apply text-xs uppercase tracking-widest text-accent font-bold mb-3;
 }
-
