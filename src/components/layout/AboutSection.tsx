@@ -3,6 +3,7 @@
 import React, { useRef } from 'react';
 import { motion, useInView } from "motion/react";
 import { useScrollDirection } from "@/hooks/use-scroll-direction";
+import { agencyStats } from '@/data/stats';
 
 export function AboutSection() {
   const contentRef = useRef<HTMLDivElement>(null);
@@ -43,7 +44,7 @@ export function AboutSection() {
     hidden: { 
       opacity: 0, 
       y: scrollDirection === 'down' ? 30 : -30,
-      x: 20 
+      x: 5 
     },
     visible: { 
       opacity: 1, 
@@ -68,7 +69,7 @@ export function AboutSection() {
   };
 
   return (
-    <section id="about" className="section-padding relative bg-secondary/30">
+    <section id="about" className="section-padding relative bg-primary/5">
       {/* Background pattern */}
       <div className="absolute inset-0 opacity-5">
         <div
@@ -80,18 +81,16 @@ export function AboutSection() {
           }}></div>
       </div>
 
-      <motion.div 
+      <motion.div
         ref={contentRef}
         className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center relative z-10"
         variants={containerVariants}
         initial="hidden"
-        animate={isInView ? "visible" : "hidden"}
-      >
+        animate={isInView ? "visible" : "hidden"}>
         {/* Image side */}
-        <motion.div 
+        <motion.div
           className="relative h-[500px] overflow-hidden rounded-lg"
-          variants={imageVariants}
-        >
+          variants={imageVariants}>
           <div className="absolute inset-0 bg-forest-900/20 z-10 rounded-lg"></div>
           <img
             src="https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?auto=format&fit=crop&w=1200&h=1200"
@@ -102,8 +101,7 @@ export function AboutSection() {
           {/* Floating elements */}
           <motion.div
             className="absolute bottom-6 right-6 bg-white/90 backdrop-blur-xs rounded-lg p-5 shadow-soft z-20 max-w-[240px]"
-            variants={childVariants}
-          >
+            variants={childVariants}>
             <p className="text-sm text-forest-950 font-medium leading-relaxed">
               &quot;Nature is not just our inspiration, it&apos;s our guiding principle in
               everything we create.&quot;
@@ -116,70 +114,64 @@ export function AboutSection() {
         </motion.div>
 
         {/* Text side */}
-        <motion.div 
-          className="flex flex-col"
-          variants={textVariants}
-        >
-          <motion.span 
-            className="section-subtitle"
-            variants={childVariants}
-          >
+        <motion.div className="flex flex-col" variants={textVariants}>
+          <motion.span className="section-subtitle" variants={childVariants}>
             OUR STORY
           </motion.span>
-          
-          <motion.h2 
-            className="section-title"
-            variants={childVariants}
-          >
+
+          <motion.h2 className="section-title" variants={childVariants}>
             Bringing Kenya&apos;s Natural Beauty Indoors
           </motion.h2>
 
-          <div className="space-y-6 mt-2">
-            <motion.p
-              variants={childVariants}
-            >
+          <div className="space-y-6 mt-2 ">
+            <motion.p variants={childVariants}>
               Founded in 2015, Savanna Design has grown from a boutique design studio to one of
               Kenya&apos;s most respected interior design firms. We blend contemporary aesthetics
               with traditional African elements to create spaces that are both timeless and deeply
               connected to their environment.
             </motion.p>
 
-            <motion.p
-              variants={childVariants}
-            >
+            <motion.p variants={childVariants}>
               Our team of designers, artisans, and craftspeople share a passion for creating
               interiors that reflect the unique beauty of Kenya—from the golden hues of the savanna
               to the rich textures of the forest. We believe that thoughtful design has the power to
               enhance wellbeing and foster harmony with nature.
             </motion.p>
 
-            <motion.div
-              className="pt-4 grid grid-cols-2 gap-6"
-              variants={childVariants}
-            >
-              <div>
-                <span className="block text-forest-800 text-4xl font-serif font-bold">75+</span>
-                <span className="text-sm text-muted-foreground">Projects Completed</span>
-              </div>
-              <div>
-                <span className="block text-forest-800 text-4xl font-serif font-bold">15+</span>
-                <span className="text-sm text-muted-foreground">Design Awards</span>
-              </div>
-              <div>
-                <span className="block text-forest-800 text-4xl font-serif font-bold">12</span>
-                <span className="text-sm text-muted-foreground">Team Members</span>
-              </div>
-              <div>
-                <span className="block text-forest-800 text-4xl font-serif font-bold">8</span>
-                <span className="text-sm text-muted-foreground">Years Experience</span>
-              </div>
+            <motion.div className="pt-4 grid grid-cols-2 gap-6" variants={childVariants}>
+              {agencyStats.map((stat, idx) => {
+                return (
+                  <motion.div
+                    key={stat.title}
+                    variants={{
+                      hidden: {
+                        opacity: 0,
+                        y: scrollDirection === "down" ? 20 : -20,
+                        x: idx % 2 === 0 ? -10 : 10,
+                      },
+                      visible: {
+                        opacity: 1,
+                        y: 0,
+                        x: 0,
+                        transition: {
+                          duration: 0.5,
+                          delay: idx * 0.4, // Increasing delay based on index
+                        },
+                      },
+                    }}>
+                    <span className="block  text-4xl font-serif font-bold">
+                      {stat.count}
+                    </span>
+                    <span className="text-sm text-muted-foreground">{stat.title}</span>
+                  </motion.div>
+                );
+              })}
             </motion.div>
 
             <motion.a
               href="#services"
-              className="inline-block mt-2 text-forest-800 font-medium hover:text-forest-700 underline-animation"
-              variants={childVariants}
-            >
+              className="inline-block mt-2 text-secondary font-medium hover:text-secondary/70 underline-animation"
+              variants={childVariants}>
               Discover our services
             </motion.a>
           </div>

@@ -1,5 +1,3 @@
-
-
 @plugin "daisyui/theme" {
   name: "forest";
   default: false;
@@ -11,7 +9,7 @@
   --color-base-content: oklch(83.768% 0.001 17.911);
   --color-primary: oklch(59% 0.145 163.225);
   --color-primary-content: oklch(0% 0 0);
-  --color-secondary: oklch(47% 0.114 61.907);
+  --color-secondary: oklch(55% 0.135 66.442);
   --color-secondary-content: oklch(13.955% 0.027 168.327);
   --color-accent: oklch(70.628% 0.119 185.713);
   --color-accent-content: oklch(14.125% 0.023 185.713);

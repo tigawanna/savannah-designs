@@ -8,26 +8,26 @@ export function Footer() {
           {/* Company info */}
           <div>
             <h3 className="text-xl font-heading font-medium mb-4">
-              SAVANNA<span className="text-savanna-300">DESIGN</span>
+              SAVANNA<span className="text-secondary">DESIGN</span>
             </h3>
             <p className=" mb-4 text-sm max-w-xs">
               Creating harmonious spaces inspired by Kenya&apos;s breathtaking landscapes and rich
               cultural heritage.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className=" hover:text-savanna-300 transition-colors">
+              <a href="#" className=" hover:text-secondary transition-colors">
                 <Instagram className="w-5 h-5" />
                 <span className="sr-only">Instagram</span>
               </a>
-              <a href="#" className=" hover:text-savanna-300 transition-colors">
+              <a href="#" className=" hover:text-secondary transition-colors">
                 <Facebook className="w-5 h-5" />
                 <span className="sr-only">Facebook</span>
               </a>
-              <a href="#" className=" hover:text-savanna-300 transition-colors">
+              <a href="#" className=" hover:text-secondary transition-colors">
                 <Twitter className="w-5 h-5" />
                 <span className="sr-only">Twitter</span>
               </a>
-              <a href="#" className=" hover:text-savanna-300 transition-colors">
+              <a href="#" className=" hover:text-secondary transition-colors">
                 <Linkedin className="w-5 h-5" />
                 <span className="sr-only">LinkedIn</span>
               </a>
