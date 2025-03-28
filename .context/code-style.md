@@ -1,0 +1,2 @@
+- prefer named functions 
+- custom hooks files should use this format`use-scroll-direction`

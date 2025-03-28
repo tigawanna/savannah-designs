@@ -1,4 +1,5 @@
 "use client";
+import { AboutSection } from "@/components/layout/AboutSection";
 import { Footer } from "@/components/layout/Footer";
 import { HeroSection } from "@/components/layout/HeroSection";
 import { Navbar } from "@/components/Navbar";
@@ -24,6 +25,7 @@ export default function Home() {
     <div className="flex flex-col min-h-screen">
       <Navbar/>
       <HeroSection />
+      <AboutSection/>
       <Footer/>
     </div>
   );
