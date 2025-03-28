@@ -1,2 +1,6 @@
-- prefer named functions 
+- prefer named functions unless if in inside other functions
 - custom hooks files should use this format`use-scroll-direction`
+- we're using motion formerly known asframer motion
+-we're using tailwindcss = daisyui so adhere to the daisyui colr variables and avoid hard coding colrs where possible
+- prefer named export from compoments unlss if deafult export is necessary
+- we are using typescript and all function inputs should have type annotations

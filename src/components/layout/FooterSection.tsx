@@ -1,6 +1,6 @@
 import { Instagram, Facebook, Twitter, Linkedin } from "lucide-react";
 
-export function Footer() {
+export function FooterSection() {
   return (
     <footer className="bg-neutral text-neutral-content pt-16 pb-8">
       <div className="max-w-7xl mx-auto px-6 md:px-8">
@@ -62,9 +62,7 @@ export function Footer() {
                 "Design Consultancy",
               ].map((item) => (
                 <li key={item}>
-                  <a
-                    href="#services"
-                    className=" hover:text-white transition-colors text-sm">
+                  <a href="#services" className=" hover:text-white transition-colors text-sm">
                     {item}
                   </a>
                 </li>
