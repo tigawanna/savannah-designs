@@ -31,11 +31,11 @@ export function TigawannaFooter() {
             xmlns="http://www.w3.org/2000/svg"
             xmlnsXlink="http://www.w3.org/1999/xlink">
             <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
-            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" strokeLinejoin="round"></g>
+            <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g>
             <g id="SVGRepo_iconCarrier">
               {" "}
               <title>github [#142]</title> <desc>Created with Sketch.</desc> <defs> </defs>{" "}
-              <g id="Page-1" stroke="none" strokeWidth="1" fill="none" fill-rule="evenodd">
+              <g id="Page-1" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
                 {" "}
                 <g
                   id="Dribbble-Light-Preview"

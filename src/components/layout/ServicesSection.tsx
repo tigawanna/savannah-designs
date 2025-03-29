@@ -2,8 +2,10 @@
 
 import { useRef } from "react";
 import { motion, useInView } from "motion/react";
-import { Leaf, HomeIcon, PaintBucket, Palette, Building, Truck } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { servicesData } from "@/data/services";
+
+// Data that could be loaded from a CMS
 
 type ServiceCardProps = {
   icon: React.ReactNode;
@@ -32,7 +34,7 @@ function ServiceCard({ icon, title, description, index, className }: ServiceCard
   return (
     <motion.div
       className={cn(
-        "bg-gradient-to-br from-primary/10 via-neutral/10 to-secondary/10 backdrop-blur-xs rounded-lg p-8 shadow-soft hover:shadow-md transition-shadow duration-300",
+        servicesData.cardAppearance.className,
         className
       )}
       variants={createCardVariants(index)}
@@ -94,50 +96,11 @@ export function ServicesSection() {
     };
   }
 
-  const services = [
-    {
-      icon: <HomeIcon className="w-5 h-5" />,
-      title: "Residential Design",
-      description:
-        "Transform your home into a sanctuary that reflects both your personality and Kenya's natural beauty.",
-    },
-    {
-      icon: <Building className="w-5 h-5" />,
-      title: "Commercial Spaces",
-      description:
-        "Create inspiring workplaces and commercial environments that embody your brand's identity.",
-    },
-    {
-      icon: <Palette className="w-5 h-5" />,
-      title: "Design Consultancy",
-      description:
-        "Get expert advice on color schemes, materials, and layouts that enhance your existing spaces.",
-    },
-    {
-      icon: <PaintBucket className="w-5 h-5" />,
-      title: "Custom Furnishings",
-      description:
-        "Commission bespoke furniture and decor items crafted by local artisans using sustainable materials.",
-    },
-    {
-      icon: <Leaf className="w-5 h-5" />,
-      title: "Biophilic Design",
-      description:
-        "Integrate natural elements into your space to improve wellbeing and create a connection to the outdoors.",
-    },
-    {
-      icon: <Truck className="w-5 h-5" />,
-      title: "Project Management",
-      description:
-        "Comprehensive oversight of your design project from concept to completion, ensuring quality and timeliness.",
-    },
-  ];
-
   return (
     <section id="services" ref={sectionRef} className="section-padding relative">
       {/* Background decoration */}
-      <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-primary/5 rounded-bl-[200px] opacity-50 -z-10"></div>
-      <div className="absolute bottom-0 left-0 w-1/4 h-1/4 bg-secondary/5 rounded-tr-[150px] opacity-50 -z-10"></div>
+      <div className={servicesData.decoration.topRight.className}></div>
+      <div className={servicesData.decoration.bottomLeft.className}></div>
 
       <motion.div 
         ref={contentRef}
@@ -151,22 +114,21 @@ export function ServicesSection() {
             className="section-subtitle" 
             variants={createTextVariants()}
           >
-            WHAT WE OFFER
+            {servicesData.sectionSubtitle}
           </motion.span>
           
           <motion.h2 
             className="section-title" 
             variants={createTextVariants()}
           >
-            Our Services
+            {servicesData.sectionTitle}
           </motion.h2>
           
           <motion.p
             className="max-w-2xl mx-auto text-base-content/70"
             variants={createTextVariants()}
           >
-            We provide a comprehensive range of interior design services, tailored to create spaces
-            that are both beautiful and functional.
+            {servicesData.sectionDescription}
           </motion.p>
         </motion.div>
 
@@ -174,7 +136,7 @@ export function ServicesSection() {
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
           variants={createContainerVariants()}
         >
-          {services.map((service, index) => (
+          {servicesData.servicesList.map((service, index) => (
             <ServiceCard
               key={index}
               icon={service.icon}
@@ -191,9 +153,9 @@ export function ServicesSection() {
           variants={createButtonVariants()}
         >
           <a
-            href="#contact"
+            href={servicesData.ctaButton.href}
             className="btn btn-primary px-8 py-3 shadow-lg hover:shadow-xl">
-            Schedule a Consultation
+            {servicesData.ctaButton.text}
           </a>
         </motion.div>
       </motion.div>

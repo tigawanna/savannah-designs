@@ -14,6 +14,13 @@ type DesktopNavProps = {
   routes: Route[];
 };
 
+// function scrollToPageHash(location: string) {
+//   const element = document.getElementById(location);
+//   if (element) {
+//     element.scrollIntoView({ behavior: "smooth" });
+//   }
+// }
+
 export function DesktopNav({ routes }: DesktopNavProps) {
   return (
     <div className="hidden md:flex space-x-8 items-center">

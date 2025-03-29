@@ -167,7 +167,7 @@ export function ContactSection() {
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-start">
           {/* Contact form - 3 columns */}
           <motion.div
-            className="lg:col-span-3 bg-primary/5 p-8 rounded-2xl shadow-md"
+            className="lg:col-span-3  bg-gradient-to-br from-primary/10 via-neutral/10 to-secondary/10 backdrop-blur-xs rounded-lg p-8 shadow-soft hover:shadow-md transition-shadow duration-300"
             variants={createFormVariants()}>
             <h3 className="text-xl font-medium text-primary mb-6">Send us a message</h3>
 
@@ -227,10 +227,8 @@ export function ContactSection() {
           </motion.div>
 
           {/* Contact info - 2 columns */}
-          <div className="lg:col-span-2 space-y-6">
-            <motion.div
-              className="bg-primary/5  p-8 rounded-2xl shadow-md"
-              variants={createInfoBoxVariants()}>
+          <div className="lg:col-span-2 space-y-6  bg-gradient-to-br from-primary/10 via-neutral/10 to-secondary/10 backdrop-blur-xs rounded-lg shadow-soft hover:shadow-md transition-shadow duration-300">
+            <motion.div className="p-8 rounded-2xl" variants={createInfoBoxVariants()}>
               <h3 className="text-xl font-medium text-primary mb-6">Contact Information</h3>
 
               <motion.div className="space-y-5" variants={createContainerVariants()}>

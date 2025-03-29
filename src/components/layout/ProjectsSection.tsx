@@ -4,14 +4,9 @@ import { useState, useRef } from 'react';
 import { motion, useInView } from "motion/react";
 import { useScrollDirection } from "@/hooks/use-scroll-direction";
 import { cn } from '@/lib/utils';
+import { Project, projects } from '@/data/projects';
 
-type Project = {
-  id: number;
-  title: string;
-  category: string;
-  image: string;
-  description: string;
-};
+
 
 type ProjectCardProps = {
   project: Project;
@@ -25,50 +20,7 @@ type FilterButtonProps = {
   index: number;
 };
 
-const projects: Project[] = [
-  {
-    id: 1,
-    title: "Savanna Retreat",
-    category: "Residential",
-    image: "https://images.unsplash.com/photo-1465379944081-7f47de8d74ac?auto=format&fit=crop&w=800&q=80",
-    description: "A private residence inspired by the golden hues and open spaces of the Kenyan savanna."
-  },
-  {
-    id: 2,
-    title: "Forest Lodge",
-    category: "Hospitality",
-    image: "https://images.unsplash.com/photo-1523712999610-f77fbcfc3843?auto=format&fit=crop&w=800&q=80",
-    description: "A boutique hotel nestled in the forest, featuring sustainable materials and biophilic design."
-  },
-  {
-    id: 3,
-    title: "Urban Oasis Office",
-    category: "Commercial",
-    image: "https://images.unsplash.com/photo-1500673922987-e212871fec22?auto=format&fit=crop&w=800&q=80",
-    description: "A corporate headquarters designed to boost productivity through natural elements and optimal flow."
-  },
-  {
-    id: 4,
-    title: "Lakeside Villa",
-    category: "Residential",
-    image: "https://images.unsplash.com/photo-1485833077593-4278bba3f11f?auto=format&fit=crop&w=800&q=80",
-    description: "A luxury home with panoramic views, blending contemporary design with traditional African influences."
-  },
-  {
-    id: 5,
-    title: "Mountain View Restaurant",
-    category: "Hospitality",
-    image: "https://images.unsplash.com/photo-1493962853295-0fd70327578a?auto=format&fit=crop&w=800&q=80",
-    description: "A dining space that frames the natural beauty of its surroundings, creating an immersive experience."
-  },
-  {
-    id: 6,
-    title: "Heritage Renovation",
-    category: "Residential",
-    image: "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=800&q=80",
-    description: "Breathing new life into a historic building while preserving its cultural significance and character."
-  }
-];
+
 
 function ProjectCard({ project, index }: ProjectCardProps) {
   const [isHovered, setIsHovered] = useState(false);
@@ -165,13 +117,16 @@ function FilterButton({ category, currentFilter, onClick, index }: FilterButtonP
     <motion.button
       variants={createFilterButtonVariants(index)}
       onClick={() => onClick(category)}
+      whileHover={{
+        y: -2,
+        transition: { duration: 0.1, ease: "easeOut" },
+      }}
       className={cn(
         "px-4 py-2 text-sm rounded-full transition-all duration-300",
-        currentFilter === category 
-          ? "bg-primary text-base-100 shadow-md" 
+        currentFilter === category
+          ? "bg-primary text-base-100 shadow-md"
           : "bg-base-100/80 text-primary hover:bg-base-100"
-      )}
-    >
+      )}>
       {category}
     </motion.button>
   );

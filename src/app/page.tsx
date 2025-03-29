@@ -13,7 +13,7 @@ import { ServicesSection } from "@/components/layout/ServicesSection";
 export default function Home() {
   return (
     <ResponsiveGenericToolbar>
-      <div className="flex flex-col min-h-screen">
+      <div className="flex flex-col min-h-screen ">
         {/* <Navbar /> */}
         <HeroSection />
         <AboutSection />
