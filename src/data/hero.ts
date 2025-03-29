@@ -12,3 +12,4 @@ export const heroContent = {
   },
   scrollIndicator: "Scroll to explore"
 };
+
