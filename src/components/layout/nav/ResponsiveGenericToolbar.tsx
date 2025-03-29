@@ -1,8 +1,6 @@
-import SiteIcon from "@/components/icons/Siteicon";
-
-import { ResponsiveToolbarDropdown } from "./ResponsiveToolbarDropdown";
-import Link from "next/link";
 import { TigawannaFooter } from "../TigawannaFooter";
+import { Navbar } from "./Navbar";
+
 
 
 
@@ -38,19 +36,8 @@ return (
 
       <div
         data-test="homepage-toolbar"
-        className="hidden w-full p-2  max-w-full items-center justify-between px-2 md:flex">
-        <div className="flex w-full justify-between">
-          <Link
-            href="/"
-            data-test="homepage-home-link"
-            className="flex items-center gap-2 text-2xl font-bold hover:text-accent">
-            <SiteIcon className="size-7" />
-          </Link>
-        </div>
-        <div className="">
-          {/* <ThemeToggle compact /> */}
-          <ResponsiveToolbarDropdown />
-        </div>
+        className="hidden w-full   max-w-full items-center justify-between px-2 md:flex">
+          <Navbar />
       </div>
       {/* Page content here */}
       {children}
@@ -63,13 +50,15 @@ return (
         className="menu min-h-full w-80 justify-between bg-base-300/70 p-4 pb-16">
         {/* Sidebar content here */}
 
-        <Link
+        {/* <Link
           href="/"
           data-test="sidebar-homepage-home-link"
           className="flex flex-col-reverse items-center gap-2 p-3 text-2xl font-bold hover:text-accent md:flex-row">
           Github dashboard
           <SiteIcon className="size-10" />
-        </Link>
+        </Link> */}
+        {/* <MobileNav routes={routes} onItemClick={() => {}} isOpen={false} /> */}
+        <Navbar />
       </ul>
     </div>
   </div>

@@ -1,7 +1,7 @@
 export function TigawannaFooter() {
   return (
-    <footer className="footer sm:footer-horizontal bg-neutral text-neutral-content p-10">
-      <aside className="flex gap-5 justify-end items-end">
+    <footer className="footer sm:footer-horizontal justify-evenly bg-neutral text-neutral-content p-10">
+      <aside className="flex gap-5 justify-center  items-end">
         <svg
           width="50"
           height="50"
@@ -14,10 +14,10 @@ export function TigawannaFooter() {
         </svg>
         <h1 className="text-3xl">Tigawanna</h1>
       </aside>
-      <div className="w-full flex items-end justify-center h-full ">
+      <div className="w-full flex flex-wrap items-end justify-center h-full ">
         <a
           target="_blank"
-          className="btn btn-link text-base"
+          className="btn btn-link text-"
           href="https://tigawanna-portfolio.vercel.app/">
           {" "}
           Built with ❤️ by Dennis
@@ -30,12 +30,12 @@ export function TigawannaFooter() {
             version="1.1"
             xmlns="http://www.w3.org/2000/svg"
             xmlnsXlink="http://www.w3.org/1999/xlink">
-            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+            <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
+            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" strokeLinejoin="round"></g>
             <g id="SVGRepo_iconCarrier">
               {" "}
               <title>github [#142]</title> <desc>Created with Sketch.</desc> <defs> </defs>{" "}
-              <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+              <g id="Page-1" stroke="none" strokeWidth="1" fill="none" fill-rule="evenodd">
                 {" "}
                 <g
                   id="Dribbble-Light-Preview"
