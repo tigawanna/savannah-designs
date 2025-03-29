@@ -3,9 +3,9 @@
 
 import { useRef } from "react";
 import { motion, useInView } from "motion/react";
-import { LazyImage } from "../helpers/LazyImage";
+// import { LazyImage } from "../helpers/LazyImage";
 import { heroContent } from "@/data/hero";
-
+import NextImage from "next/image";
 
 export function HeroSection() {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -15,7 +15,7 @@ export function HeroSection() {
   function createContainerVariants() {
     return {
       hidden: {
-        opacity: 0,
+        opacity: 0.1,
       },
       visible: {
         opacity: 1,
@@ -30,7 +30,7 @@ export function HeroSection() {
   function createItemVariants() {
     return {
       hidden: {
-        opacity: 0,
+        opacity: 0.2,
       },
       visible: {
         opacity: 1,
@@ -47,13 +47,23 @@ export function HeroSection() {
       initial={{ opacity: 1 }}>
       {/* Background image with blur effect */}
       <div className="absolute inset-0 w-full h-full">
-        <LazyImage
+        {/* <LazyImage
           props={{
             src: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=2000&q=80",
             alt: "Nature background",
             className:
               "-z-10 object-cover absolute inset-0 min-h-screen object-center transition-opacity duration-1000 ease-in-out",
           }}
+        /> */}
+        <NextImage
+          className="absolute inset-0 object-cover min-h-screen object-center blur-sm"
+          fill
+          alt="Nature background"
+          priority
+          quality={100}
+          sizes="100vw"
+          unoptimized
+          src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=200&q=80"
         />
         {/* Gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-base-300/60 via-base-300/70 to-base-100/70 mix-blend-multiply"></div>
