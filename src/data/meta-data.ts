@@ -2,6 +2,7 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: {
+    absolute: "Savanna Designs | Where Nature Meets Elegance",
     default:"Savanna Designs | Premium Interior Design in Kenya",
     template: "%s | Savanna Designs",
 },
