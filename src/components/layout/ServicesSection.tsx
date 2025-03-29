@@ -32,7 +32,7 @@ function ServiceCard({ icon, title, description, index, className }: ServiceCard
   return (
     <motion.div
       className={cn(
-        "bg-base-200/70 backdrop-blur-xs rounded-lg p-8 shadow-soft hover:shadow-md transition-shadow duration-300",
+        "bg-gradient-to-br from-primary/10 via-neutral/10 to-secondary/10 backdrop-blur-xs rounded-lg p-8 shadow-soft hover:shadow-md transition-shadow duration-300",
         className
       )}
       variants={createCardVariants(index)}
@@ -181,7 +181,7 @@ export function ServicesSection() {
               title={service.title}
               description={service.description}
               index={index}
-              className={index === 2 ? "lg:transform lg:-translate-y-8" : ""}
+              className={index % 2 === 0 ? "lg:transform lg:-translate-y-5" : ""}
             />
           ))}
         </motion.div>

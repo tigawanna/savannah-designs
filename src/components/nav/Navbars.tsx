@@ -53,7 +53,7 @@ export function MobileNav({ routes, onItemClick }: MobileNavProps) {
           href="#"
           onClick={onItemClick}
           className="text-primary font-heading text-xl md:text-2xl font-medium">
-          SAVANNA<span className="text-accent">DESIGN</span>
+          SAVANNA<span className="text-accent">DESIGNS</span>
         </a>
         <motion.div
           className="md:hidden  backdrop-blur-md shadow-soft overflow-hidden"

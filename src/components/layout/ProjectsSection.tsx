@@ -127,12 +127,12 @@ function ProjectCard({ project, index }: ProjectCardProps) {
         }}
         transition={{ duration: 0.5 }}
       >
-        <span className="text-xs uppercase tracking-wider text-base-100/80 font-medium mb-2">
+        <span className="text-xs uppercase tracking-wider text-white font-medium mb-2">
           {project.category}
         </span>
-        <h3 className="text-2xl font-medium mb-2">{project.title}</h3>
+        <h3 className="text-2xl font-medium mb-2 text-white">{project.title}</h3>
         <motion.p 
-          className="text-sm text-base-100/80 max-w-md"
+          className="text-sm text-white max-w-md"
           animate={{
             opacity: isHovered ? 1 : 0,
             y: isHovered ? 0 : 4
@@ -182,7 +182,7 @@ export function ProjectsSection() {
   const sectionRef = useRef<HTMLElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(contentRef, { once: false, amount: 0.1 });
-  const scrollDirection = useScrollDirection();
+  // const scrollDirection = useScrollDirection();
   
   function createContainerVariants() {
     return {
@@ -201,7 +201,7 @@ export function ProjectsSection() {
     return {
       hidden: { 
         opacity: 0, 
-        y: scrollDirection === 'down' ? 30 : -30 
+        // y: scrollDirection === 'down' ? 30 : -30 
       },
       visible: { 
         opacity: 1, 

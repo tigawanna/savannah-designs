@@ -167,7 +167,7 @@ export function ContactSection() {
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-start">
           {/* Contact form - 3 columns */}
           <motion.div
-            className="lg:col-span-3 glass p-8 rounded-2xl shadow-md"
+            className="lg:col-span-3 bg-primary/5 p-8 rounded-2xl shadow-md"
             variants={createFormVariants()}>
             <h3 className="text-xl font-medium text-primary mb-6">Send us a message</h3>
 
@@ -229,7 +229,7 @@ export function ContactSection() {
           {/* Contact info - 2 columns */}
           <div className="lg:col-span-2 space-y-6">
             <motion.div
-              className="glass p-8 rounded-2xl shadow-md"
+              className="bg-primary/5  p-8 rounded-2xl shadow-md"
               variants={createInfoBoxVariants()}>
               <h3 className="text-xl font-medium text-primary mb-6">Contact Information</h3>
 
