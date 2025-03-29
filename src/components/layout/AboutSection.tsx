@@ -19,7 +19,7 @@ export function AboutSection() {
       opacity: 1, 
       y: 0,
       transition: {
-        duration: 0.8,
+        duration: 0.7,
         staggerChildren: 0.1
       }
     }

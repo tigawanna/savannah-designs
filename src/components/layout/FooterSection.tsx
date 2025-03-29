@@ -36,13 +36,13 @@ export function FooterSection() {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-white font-medium mb-4">Quick Links</h4>
+            <h4 className="text-base-content font-medium mb-4">Quick Links</h4>
             <ul className="space-y-2">
               {["About Us", "Services", "Projects", "Contact", "Careers"].map((item) => (
                 <li key={item}>
                   <a
                     href={`#${item.toLowerCase().replace(" ", "-")}`}
-                    className=" hover:text-white transition-colors text-sm">
+                    className=" hover:text-primary-content transition-colors text-sm">
                     {item}
                   </a>
                 </li>
@@ -52,7 +52,7 @@ export function FooterSection() {
 
           {/* Services */}
           <div>
-            <h4 className="text-white font-medium mb-4">Services</h4>
+            <h4 className="text-base-content font-medium mb-4">Services</h4>
             <ul className="space-y-2">
               {[
                 "Residential Design",
@@ -62,7 +62,7 @@ export function FooterSection() {
                 "Design Consultancy",
               ].map((item) => (
                 <li key={item}>
-                  <a href="#services" className=" hover:text-white transition-colors text-sm">
+                  <a href="#services" className=" hover:text-primary-content transition-colors text-sm">
                     {item}
                   </a>
                 </li>
@@ -72,7 +72,7 @@ export function FooterSection() {
 
           {/* Newsletter */}
           <div>
-            <h4 className="text-white font-medium mb-4">Newsletter</h4>
+            <h4 className="text-base-content font-medium mb-4">Newsletter</h4>
             <p className=" mb-4 text-sm">
               Subscribe to our newsletter for design inspiration and updates.
             </p>
@@ -92,17 +92,17 @@ export function FooterSection() {
         </div>
 
         <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center">
-          <div className="text-white/60 text-sm mb-4 md:mb-0">
+          <div className="text-base-content text-sm mb-4 md:mb-0">
             &copy; {new Date().getFullYear()} Savanna Design. All rights reserved.
           </div>
           <div className="flex space-x-6">
-            <a href="#" className="text-white/60 hover:text-white text-sm">
+            <a href="#" className="text-base-content hover:text-primary-content text-sm">
               Privacy Policy
             </a>
-            <a href="#" className="text-white/60 hover:text-white text-sm">
+            <a href="#" className="text-base-content hover:text-primary-content text-sm">
               Terms of Service
             </a>
-            <a href="#" className="text-white/60 hover:text-white text-sm">
+            <a href="#" className="text-base-content hover:text-primary-content text-sm">
               Cookie Policy
             </a>
           </div>
