@@ -2,22 +2,22 @@
 
 import React, { useRef } from 'react';
 import { motion, useInView } from "motion/react";
-import { useScrollDirection } from "@/hooks/use-scroll-direction";
+// import { useScrollDirection } from "@/hooks/use-scroll-direction";
 
 export function AboutSection() {
   const contentRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(contentRef, { once: false, amount: 0.1 });
-  const scrollDirection = useScrollDirection();
+  // const scrollDirection = useScrollDirection();
 
   // Animation variants based on scroll direction
   const containerVariants = {
     hidden: { 
       opacity: 0, 
-      y: scrollDirection === 'down' ? 50 : -50 
+      // y: scrollDirection === 'down' ? 50 : -50 
     },
     visible: { 
       opacity: 1, 
-      y: 0,
+      // y: 0,
       transition: {
         duration: 0.7,
         staggerChildren: 0.1
@@ -28,13 +28,13 @@ export function AboutSection() {
   const imageVariants = {
     hidden: { 
       opacity: 0, 
-      y: scrollDirection === 'down' ? 30 : -30,
-      x: -20 
+      // y: scrollDirection === 'down' ? 30 : -30,
+      // x: -20 
     },
     visible: { 
       opacity: 1, 
-      y: 0,
-      x: 0,
+      // y: 0,
+      // x: 0,
       transition: { duration: 0.7 }
     }
   };
@@ -42,13 +42,13 @@ export function AboutSection() {
   const textVariants = {
     hidden: { 
       opacity: 0, 
-      y: scrollDirection === 'down' ? 30 : -30,
-      x: 20 
+      // y: scrollDirection === 'down' ? 30 : -30,
+      // x: 20 
     },
     visible: { 
       opacity: 1, 
-      y: 0,
-      x: 0,
+      // y: 0,
+      // x: 0,
       transition: { duration: 0.7 }
     }
   };
@@ -56,19 +56,19 @@ export function AboutSection() {
   const childVariants = {
     hidden: { 
       opacity: 0, 
-      y: 15,
-      x: scrollDirection === 'down' ? 10 : -10 
+      // y: 15,
+      // x: scrollDirection === 'down' ? 10 : -10 
     },
     visible: { 
       opacity: 1, 
-      y: 0,
-      x: 0,
+      // y: 0,
+      // x: 0,
       transition: { duration: 0.5 }
     }
   };
 
   return (
-    <section id="about" className="section-padding relative bg-secondary/30">
+    <section id="about" className="section-padding relative bg-base-200">
       {/* Background pattern */}
       <div className="absolute inset-0 opacity-5">
         <div

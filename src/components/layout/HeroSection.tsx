@@ -2,23 +2,23 @@
 
 import { useRef } from "react";
 import { motion, useInView } from "motion/react";
-import { useScrollDirection } from "@/hooks/use-scroll-direction";
+// import { useScrollDirection } from "@/hooks/use-scroll-direction";
 
 export function HeroSection() {
   const heroRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(contentRef, { once: false, amount: 0.3 });
-  const scrollDirection = useScrollDirection();
+  // const scrollDirection = useScrollDirection();
 
   // Animation variants based on scroll direction
   const containerVariants = {
     hidden: { 
       opacity: 0, 
-      y: scrollDirection === 'down' ? 100 : -100 
+      // y: scrollDirection === 'down' ? 100 : -100 
     },
     visible: { 
       opacity: 1, 
-      y: 0,
+      // y: 0,
       transition: {
         duration: 0.8,
         staggerChildren: 0.15
@@ -29,11 +29,11 @@ export function HeroSection() {
   const itemVariants = {
     hidden: { 
       opacity: 0, 
-      y: scrollDirection === 'down' ? 30 : -30 
+      // y: scrollDirection === 'down' ? 30 : -30 
     },
     visible: { 
       opacity: 1, 
-      y: 0,
+      // y: 0,
       transition: { duration: 0.6 }
     }
   };
@@ -83,7 +83,7 @@ export function HeroSection() {
             className="btn btn-primary btn-wide transition-all duration-300 shadow-lg hover:shadow-xl">
             View Projects
           </a>
-          <a href="#contact" className="btn btn-secondary  border-[1px] transition-all duration-300">
+          <a href="#contact" className="btn btn-outline  border-[1px] transition-all duration-300">
             Contact Us
           </a>
         </motion.div>

@@ -3,7 +3,7 @@
 import { useRef } from "react";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import { motion, useInView } from "motion/react";
-import { useScrollDirection } from "@/hooks/use-scroll-direction";
+// import { useScrollDirection } from "@/hooks/use-scroll-direction";
 
 type ContactInfoProps = {
   icon: React.ReactNode;
@@ -13,19 +13,19 @@ type ContactInfoProps = {
 };
 
 function ContactInfo({ icon, title, content, index }: ContactInfoProps) {
-  const scrollDirection = useScrollDirection();
+  // const scrollDirection = useScrollDirection();
 
   function createContactItemVariants(index: number) {
     return {
       hidden: {
         opacity: 0,
-        x: 15,
-        y: scrollDirection === "down" ? 20 : -20,
+        // x: 15,
+        // y: scrollDirection === "down" ? 20 : -20,
       },
       visible: {
         opacity: 1,
-        x: 0,
-        y: 0,
+        // x: 0,
+        // y: 0,
         transition: {
           duration: 0.5,
           delay: 0.1 * index + 0.3,
@@ -51,7 +51,7 @@ export function ContactSection() {
   const sectionRef = useRef<HTMLElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(contentRef, { once: false, amount: 0.1 });
-  const scrollDirection = useScrollDirection();
+  // const scrollDirection = useScrollDirection();
 
   function createContainerVariants() {
     return {
@@ -72,11 +72,11 @@ export function ContactSection() {
     return {
       hidden: {
         opacity: 0,
-        y: scrollDirection === "down" ? 25 : -25,
+        // y: scrollDirection === "down" ? 25 : -25,
       },
       visible: {
         opacity: 1,
-        y: 0,
+        // y: 0,
         transition: { duration: 0.6 },
       },
     };
@@ -86,13 +86,13 @@ export function ContactSection() {
     return {
       hidden: {
         opacity: 0,
-        x: -30,
-        y: scrollDirection === "down" ? 20 : -20,
+        // x: -30,
+        // y: scrollDirection === "down" ? 20 : -20,
       },
       visible: {
         opacity: 1,
-        x: 0,
-        y: 0,
+        // x: 0,
+        // y: 0,
         transition: {
           duration: 0.7,
           delay: 0.2,
@@ -105,13 +105,13 @@ export function ContactSection() {
     return {
       hidden: {
         opacity: 0,
-        x: 30,
-        y: scrollDirection === "down" ? 20 : -20,
+        // x: 30,
+        // y: scrollDirection === "down" ? 20 : -20,
       },
       visible: {
         opacity: 1,
-        x: 0,
-        y: 0,
+        // x: 0,
+        // y: 0,
         transition: {
           duration: 0.7,
           delay: 0.3,
@@ -138,9 +138,9 @@ export function ContactSection() {
   }
 
   return (
-    <section id="contact" ref={sectionRef} className="section-padding bg-secondary/40 relative">
+    <section id="contact" ref={sectionRef} className="section-padding  relative">
       {/* Background decoration */}
-      <div className="absolute top-0 left-0 w-full h-40 bg-secondary/70 -z-10 clip-diagonal"></div>
+      <div className="absolute top-0 left-0 w-full h-40 -z-10 clip-diagonal"></div>
 
       <motion.div
         ref={contentRef}
