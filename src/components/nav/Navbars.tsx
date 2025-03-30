@@ -1,6 +1,5 @@
 "use client";
 
-
 import { motion, AnimatePresence } from "motion/react";
 import { ModeToggle } from "../theme/ThemeToggle";
 
@@ -12,6 +11,7 @@ type Route = {
 
 type DesktopNavProps = {
   routes: Route[];
+  isScrolled: boolean;
 };
 
 // function scrollToPageHash(location: string) {
@@ -21,14 +21,16 @@ type DesktopNavProps = {
 //   }
 // }
 
-export function DesktopNav({ routes }: DesktopNavProps) {
+export function DesktopNav({ routes, isScrolled }: DesktopNavProps) {
   return (
     <div className="hidden md:flex space-x-8 items-center">
       {routes.map((route, index) => (
         <motion.a
           key={route.name}
           href={route.href === "/" ? "#home" : `#${route.name}`}
-          className="text-sm font-medium text-primary hover:text-accent transition-colors underline-animation"
+          className={`text-sm font-medium text-pri hover:text-accent transition-colors underline-animation ${
+            isScrolled ? "text-base-content" : "text-primary"
+          }`}
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3, delay: 0.1 * index }}
@@ -36,15 +38,10 @@ export function DesktopNav({ routes }: DesktopNavProps) {
           {route.name.charAt(0).toUpperCase() + route.name.slice(1)}
         </motion.a>
       ))}
-      <ModeToggle/>
+      <ModeToggle />
     </div>
   );
 }
-
-
-
-
-
 
 type MobileNavProps = {
   routes: Route[];
@@ -60,7 +57,7 @@ export function MobileNav({ routes, onItemClick }: MobileNavProps) {
           href="#"
           onClick={onItemClick}
           className="text-primary font-heading text-xl md:text-2xl font-medium">
-          SAVANNA<span className="text-accent">DESIGNS</span>
+          SAVANNA<span className="text-accent">INTERIORS</span>
         </a>
         <motion.div
           className="md:hidden  backdrop-blur-md shadow-soft overflow-hidden"
@@ -73,7 +70,7 @@ export function MobileNav({ routes, onItemClick }: MobileNavProps) {
               <motion.a
                 key={route.name}
                 href={route.href === "/" ? "#home" : `#${route.name}`}
-                className="text-sm font-medium text-primary hover:text-accent transition-colors py-2 flex items-center gap-2"
+                className="text-sm font-medium text-base-content hover:text-accent transition-colors py-2 flex items-center gap-2"
                 onClick={onItemClick}
                 initial={{ x: -20, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}

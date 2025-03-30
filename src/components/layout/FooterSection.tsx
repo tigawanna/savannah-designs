@@ -2,7 +2,7 @@ import { Instagram, Facebook, Twitter, Linkedin } from "lucide-react";
 
 export function FooterSection() {
   return (
-    <footer className="bg-neutral text-neutral-content pt-16 pb-8">
+    <footer className="bg-base-200 pt-16 pb-8">
       <div className="max-w-7xl mx-auto px-6 md:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           {/* Company info */}
@@ -62,7 +62,9 @@ export function FooterSection() {
                 "Design Consultancy",
               ].map((item) => (
                 <li key={item}>
-                  <a href="#services" className=" hover:text-primary-content transition-colors text-sm">
+                  <a
+                    href="#services"
+                    className=" hover:text-primary-content transition-colors text-sm">
                     {item}
                   </a>
                 </li>

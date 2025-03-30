@@ -97,7 +97,7 @@ export function ServicesSection() {
   }
 
   return (
-    <section id="services" ref={sectionRef} className="section-padding relative">
+    <section id="services" ref={sectionRef} className="section-padding bg-base-100 relative">
       {/* Background decoration */}
       <div className={servicesData.decoration.topRight.className}></div>
       <div className={servicesData.decoration.bottomLeft.className}></div>

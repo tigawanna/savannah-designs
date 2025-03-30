@@ -27,7 +27,7 @@ export function ResponsiveGenericToolbar({ children }: ResponsiveGenericToolbarP
   return (
     <div className="drawer" data-test="sidebar-drawer">
       <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
-      <div className="drawer-content flex h-full min-h-screen flex-col bg-base-300/70">
+      <div className="drawer-content flex h-full min-h-screen flex-col bg-base-100/70">
         {/* mobile Navbar */}
 
         <motion.nav
@@ -60,7 +60,7 @@ export function ResponsiveGenericToolbar({ children }: ResponsiveGenericToolbarP
           className={cn(
             "fixed top-0 left-0 right-0 z-50 py-4 px-6 md:px-12 hidden md:flex",
             isScrolled
-              ? "bg-base-100/70 backdrop-blur-md shadow-soft transition-colors"
+              ? "bg-base-100 backdrop-blur-md shadow-soft transition-colors"
               : "bg-transparent"
           )}
           initial={{ y: -100 }}
@@ -68,9 +68,9 @@ export function ResponsiveGenericToolbar({ children }: ResponsiveGenericToolbarP
           transition={{ duration: 0.5 }}>
           <div className="w-full mx-auto flex items-center justify-between">
             <a href="#" className="text-primary p-2 font-heading rounded-4xl text-xl md:text-3xl font-medium">
-              SAVANNA<span className="text-primary/90"> DESIGNS</span>
+              SAVANNA<span className="text-primary/90"> INTERIORS</span>
             </a>
-            <DesktopNav routes={routes} />
+            <DesktopNav routes={routes} isScrolled={isScrolled}/>
           </div>
         </motion.nav>
 
@@ -82,7 +82,7 @@ export function ResponsiveGenericToolbar({ children }: ResponsiveGenericToolbarP
         <label htmlFor="my-drawer-3" aria-label="close sidebar" className="drawer-overlay"></label>
         <ul
           data-test="homepage-sidebar"
-          className="menu min-h-full w-80 justify-between bg-base-300/70 p-4 pb-16">
+          className="menu min-h-full w-80 justify-between bg-base-200/70 p-4 pb-16">
           {/* Sidebar content here */}
           <MobileNav routes={routes} isOpen onItemClick={() => closeMobileMenu()} />
         </ul>

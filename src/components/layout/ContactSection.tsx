@@ -138,7 +138,7 @@ export function ContactSection() {
   }
 
   return (
-    <section id="contact" ref={sectionRef} className="section-padding  relative">
+    <section id="contact" ref={sectionRef} className="section-padding bg-base-100  relative">
       {/* Background decoration */}
       <div className="absolute top-0 left-0 w-full h-40 -z-10 clip-diagonal"></div>
 
