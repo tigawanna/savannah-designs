@@ -167,62 +167,76 @@ export function ContactSection() {
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-start">
           {/* Contact form - 3 columns */}
           <motion.div
-            className="lg:col-span-3  bg-gradient-to-br from-primary/10 via-neutral/10 to-secondary/10 backdrop-blur-xs rounded-lg p-8 shadow-soft hover:shadow-md transition-shadow duration-300"
+            className="lg:col-span-3 bg-gradient-to-br from-primary/10 via-neutral/10 to-secondary/10 backdrop-blur-xs rounded-lg p-8 shadow-soft hover:shadow-md transition-shadow duration-300"
             variants={createFormVariants()}>
             <h3 className="text-xl font-medium text-primary mb-6">Send us a message</h3>
 
-            <form className="space-y-6">
+            <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div>
+                <div className="form-control">
                   <label htmlFor="name" className="block text-sm font-medium text-primary mb-1">
                     Name
                   </label>
                   <input
                     type="text"
                     id="name"
+                    name="name"
                     className="w-full px-4 py-2 bg-base-100 border border-base-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
                     placeholder="Your name"
+                    aria-required="true"
                   />
                 </div>
-                <div>
+                <div className="form-control">
                   <label htmlFor="email" className="block text-sm font-medium text-primary mb-1">
                     Email
                   </label>
                   <input
                     type="email"
                     id="email"
+                    name="email"
                     className="w-full px-4 py-2 bg-base-100 border border-base-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
                     placeholder="Your email"
+                    aria-required="true"
                   />
                 </div>
               </div>
 
-              <div>
+              <div className="form-control">
                 <label htmlFor="subject" className="block text-sm font-medium text-primary mb-1">
                   Subject
                 </label>
                 <input
                   type="text"
                   id="subject"
+                  name="subject"
                   className="w-full px-4 py-2 bg-base-100 border border-base-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
                   placeholder="Subject of your message"
+                  aria-required="true"
                 />
               </div>
 
-              <div>
+              <div className="form-control">
                 <label htmlFor="message" className="block text-sm font-medium text-primary mb-1">
                   Message
                 </label>
                 <textarea
                   id="message"
+                  name="message"
                   rows={5}
                   className="w-full px-4 py-2 bg-base-100 border border-base-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
-                  placeholder="Your message"></textarea>
+                  placeholder="Your message"
+                  aria-required="true">
+                </textarea>
               </div>
 
-              <button type="submit" className="btn btn-primary px-8">
+              <motion.button 
+                type="submit" 
+                className="btn btn-primary px-8"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+              >
                 Send Message
-              </button>
+              </motion.button>
             </form>
           </motion.div>
 
