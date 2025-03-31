@@ -3,6 +3,7 @@
 import { useRef } from "react";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import { motion, useInView } from "motion/react";
+import Image from "next/image";
 // import { useScrollDirection } from "@/hooks/use-scroll-direction";
 
 type ContactInfoProps = {
@@ -301,7 +302,7 @@ export function ContactSection() {
             <motion.div
               className="rounded-2xl overflow-hidden h-[250px]"
               variants={createMapVariants()}>
-              <img
+              <Image
                 src="https://images.unsplash.com/photo-1615729947596-a598e5de0ab3?auto=format&fit=crop&w=800&q=80"
                 alt="Savanna Design Studio"
                 className="w-full h-full object-cover"

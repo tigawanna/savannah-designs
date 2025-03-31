@@ -1,16 +1,12 @@
-/* eslint-disable @next/next/no-img-element */
-"use client";
-
-import { useRef } from "react";
-import { motion, useInView } from "motion/react";
+import { motion} from "motion/react";
 // import { LazyImage } from "../helpers/LazyImage";
 import { heroContent } from "@/data/hero";
 import NextImage from "next/image";
 
 export function HeroSection() {
-  const heroRef = useRef<HTMLDivElement>(null);
-  const contentRef = useRef<HTMLDivElement>(null);
-  const isInView = useInView(contentRef, { once: false, amount: 0.3 });
+  // const heroRef = useRef<HTMLDivElement>(null);
+  // const contentRef = useRef<HTMLDivElement>(null);
+  // const isInView = useInView(contentRef, { once: false, amount: 0.3 });
 
   function createContainerVariants() {
     return {
@@ -42,7 +38,7 @@ export function HeroSection() {
   return (
     <motion.section
       id="home"
-      ref={heroRef}
+      // ref={heroRef}
       className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden"
       initial={{ opacity: 1 }}>
       {/* Background image with blur effect */}
@@ -64,11 +60,12 @@ export function HeroSection() {
 
       {/* Content */}
       <motion.div
-        ref={contentRef}
+        // ref={contentRef}
         className="relative md:mt-28 z-10 max-w-2xl mx-auto text-hero-content h-full flex gap-6 flex-col items-center justify-center"
         variants={createContainerVariants()}
         initial="hidden"
-        animate={isInView ? "visible" : "hidden"}>
+        animate={"visible"}
+        >
         <motion.h1
           className="font-serif text-6xl md:hidden text-center leading-tight tracking-tight"
           variants={createItemVariants()}>
@@ -112,7 +109,7 @@ export function HeroSection() {
         <motion.div
           className=" flex flex-col mt-5 items-center"
           initial={{ opacity: 0 }}
-          animate={{ opacity: isInView ? 1 : 0 }}
+          // animate={{ opacity: isInView ? 1 : 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}>
           <span className="text-primary text-sm mb-2">{heroContent.scrollIndicator}</span>
           <div className="w-5 h-10 border-2 border-primary rounded-full flex justify-center p-1">
