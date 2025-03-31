@@ -1,15 +1,13 @@
-/* eslint-disable @next/next/no-img-element */
-"use client";
-
-import { useRef } from 'react';
-import { motion, useInView } from "motion/react";
+// import { useRef } from 'react';
+import { motion } from "motion/react";
 import { aboutQuote, aboutText, aboutAccomplishments } from '@/data/about';
+import Image from "next/image";
 
 
 
 export function AboutSection() {
-  const contentRef = useRef<HTMLDivElement>(null);
-  const isInView = useInView(contentRef, { once: false, amount: 0.1 });
+  // const contentRef = useRef<HTMLDivElement>(null);
+  // const isInView = useInView(contentRef, { once: false, amount: 0.1 });
   // const scrollDirection = useScrollDirection();
 
   // Animation variants based on scroll direction
@@ -84,17 +82,17 @@ export function AboutSection() {
       </div>
 
       <motion.div
-        ref={contentRef}
+        // ref={contentRef}
         className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center relative z-10"
         variants={containerVariants}
         initial="hidden"
-        animate={isInView ? "visible" : "hidden"}>
+        animate={"visible"}>
         {/* Image side */}
         <motion.div
           className="relative h-[500px] overflow-hidden rounded-lg"
           variants={imageVariants}>
           <div className="absolute inset-0 bg-primary/20 z-10 rounded-lg"></div>
-          <img
+          <Image
             src="https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?auto=format&fit=crop&w=1200&h=1200"
             alt="Kenya forest"
             className="w-full h-full object-cover object-center rounded-lg"
