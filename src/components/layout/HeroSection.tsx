@@ -41,6 +41,7 @@ export function HeroSection() {
       // ref={heroRef}
       className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden"
       initial={{ opacity: 1 }}>
+
       {/* Background image with blur effect */}
       <div className="absolute inset-0 w-full h-full">
         <NextImage
@@ -64,8 +65,7 @@ export function HeroSection() {
         className="relative md:mt-28 z-10 max-w-2xl mx-auto text-hero-content h-full flex gap-6 flex-col items-center justify-center"
         variants={createContainerVariants()}
         initial="hidden"
-        animate={"visible"}
-        >
+        animate={"visible"}>
         <motion.h1
           className="font-serif text-6xl md:hidden text-center leading-tight tracking-tight"
           variants={createItemVariants()}>
@@ -78,7 +78,6 @@ export function HeroSection() {
           {heroContent.subtitle}
         </motion.h1>
 
-
         <motion.div
           className="h-0.5 w-32 mx-auto bg-accent"
           variants={createItemVariants()}></motion.div>
@@ -88,8 +87,6 @@ export function HeroSection() {
           variants={createItemVariants()}>
           {heroContent.description}
         </motion.p>
-
-
 
         <motion.div
           className="flex flex-col sm:flex-row justify-center items-center gap-5 mt-4"

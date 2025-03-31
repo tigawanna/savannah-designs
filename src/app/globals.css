@@ -110,9 +110,12 @@ layer(base); */
   ::file-selector-button {
     border-color: var(--color-gray-200, currentColor);
   }
-  * {
+/* Add this to your existing global CSS file */
+@media (prefers-reduced-motion: no-preference) {
+  html {
     scroll-behavior: smooth;
   }
+}
 }
 
 :root {

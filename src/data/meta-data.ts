@@ -34,24 +34,12 @@ export const metadata: Metadata = {
     siteName:siteBasics.name,
     locale: "en_KE",
     type: "website",
-    // images: [
-    //   {
-    //     url: "/images/og-image.jpg", // You'll need to add this image
-    //     width: 1200,
-    //     height: 630,
-    //     alt: `${siteBasics.name}  - Interior Design in Kenya",
-    //   },
-    // ],
   },
   twitter: {
     card: "summary_large_image",
     title: `${siteBasics.name} | Premium Interior Design`,
     description: "Creating beautiful, sustainable interior spaces inspired by Kenya's natural landscapes.",
-    //images: ["/images/twitter-image.jpg"], // You'll need to add this image
   },
-  // viewport: {
-  //   width: "device-width",
-  //   initialScale: 1,
-  // },
+
   category: "Interior Design",
 };
