@@ -2,7 +2,7 @@
     cornrows: {
       title: "Cornrows",
       description: "Traditional and modern cornrow styles, including Swahili cornrows with elegant patterns and designs.",
-      image: "https://images.unsplash.com/photo-1605980625600-88c0c6011043?q=80&w=800&auto=format&fit=crop"
+      image: "https://images.unsplash.com/photo-1624823574478-acf031dec181?w=600&auto=format&fit=crop"
     },
     boxBraids: {
       title: "Box Braids",
@@ -12,7 +12,7 @@
     springTwists: {
       title: "Spring Twists",
       description: "Bouncy and lightweight spring twists that offer a natural, textured look with dimensional fullness.",
-      image: "https://images.unsplash.com/photo-1626247410626-7c477434d63d?q=80&w=800&auto=format&fit=crop"
+      image: "https://unsplash.com/photos/a-person-wearing-a-white-shirt-and-black-sunglasses-8rs7mhFvaOI"
     },
     knotless: {
       title: "Knotless Braids",
